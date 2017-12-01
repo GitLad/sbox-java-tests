@@ -1,3 +1,7 @@
+# Sandbox Java Integration Tests Sample
+
+This is a modified version of the Spring PetClinic. It has been modified to have the PetClinic always connect to a MySQL database, including when running tests. It has also been modified to add Sandbox, and a single workflow to run MySQL & the integration tests.
+
 # Spring PetClinic Sample Application [![Build Status](https://travis-ci.org/spring-projects/spring-petclinic.png?branch=master)](https://travis-ci.org/spring-projects/spring-petclinic/)
 
 ## Understanding the Spring Petclinic application with a few diagrams
