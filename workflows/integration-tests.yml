@@ -1,0 +1,25 @@
+steps:
+ - service:
+     image: mysql:5.7.20
+     source:
+       omit: true
+     environment:
+      - name: MYSQL_ROOT_PASSWORD
+        value: pass
+      - name: MYSQL_DATABASE
+        value: test
+     ports:
+      - name: mysql
+        container: 3306
+        internal: 3306
+     readiness:
+       tcp:
+         port: 3306
+ - run:
+     image: maven:3.5.2-jdk-8
+     script: |-
+       cd /app
+       mvn clean install test
+     volumes:
+      - mountPath: /root/.m2
+        hostPath: ./.m2
